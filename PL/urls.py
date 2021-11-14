@@ -19,10 +19,11 @@ from users import views
 from . import views as v
 
 urlpatterns = [
-    path('', views.index, name = 'index'),
+    path('', v.index, name = 'index'),
     path('admin/', admin.site.urls),
     path('dashboard/', v.dashboard, name='dashboard'),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('users/', include('users.urls')),
     path('register/', views.register, name='register'), # страница регистрации
 
 ]
